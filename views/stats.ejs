@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Welcome to Codefeed - Share and Solve</title>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/loggedinhome.css">
+  </head>
+
+  <body>
+
+    <nav class="nav">
+   <ul class="nav__wrap">
+      <li class="nav__list"><a href="/feed" class="nav__link">Home</a></li>
+      <li class="nav__list"><a href="/add" class="nav__link">Add a problem</a></li>
+      <li class="nav__list"><a href="/viewproblist" class="nav__link">View solved problems</a></li>
+      <li class="nav__list"><a href="/profile" class="nav__link">Profile</a></li>
+      <li class="nav__list"><a href="/logout" class="nav__link">Logout</a></li>
+
+   </ul>
+</nav>   
+
+<main class="content">
+    <% 
+    var count=0;
+    documents.forEach(function(documentObject) { 
+      %>
+    <h2>Problem ID: <%= documentObject.problem_id %></h2>
+    <p>Problem Name: <%= documentObject._statement %> </p>
+    <p>Time:<%= documentObject.time %></p>
+    
+    <%count++  }) 
+    %>
+    <h1>Total Solved: <%= count %></h1>
+    <%
+    %>
+  
+</main>
+    
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>  
+    <script type="text/javascript" src="/loggedinhome.js"></script>  
+
+  </body>
+</html>
+ 
+
