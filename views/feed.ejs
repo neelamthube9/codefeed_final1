@@ -6,6 +6,10 @@
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/loggedinhome.css">
+    <style>
+      a.1{text-decoration:none}
+      a.2{text-decoration:underline}
+    </style>
   </head>
 
   <body>
@@ -26,7 +30,7 @@
 <main class="content">
     <% documents.forEach(function(documentObject) { 
       %>
-    <h1><%= documentObject.username %> solved </h1>
+    <h1><a href="/profile" style="text-decoration: none"><%= documentObject.username %></a> solved </h1>
     <h2><%= documentObject.problem_id %>. <%= documentObject._statement %> in  <%= documentObject.time %>  seconds on  <%= documentObject.date_added %> . </h2>
    
     <% }) %>
@@ -37,4 +41,3 @@
   </body>
 </html>
  
-
