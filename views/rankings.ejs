@@ -6,6 +6,10 @@
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/loggedinhome.css">
+    <style>
+          a.1{text-decoration:none}
+          a.2{text-decoration:underline}
+    </style>
   </head>
 
   <body>
@@ -15,8 +19,8 @@
       <li class="nav__list"><a href="/feed" class="nav__link">Home</a></li>
       <li class="nav__list"><a href="/add" class="nav__link">Add a problem</a></li>
       <li class="nav__list"><a href="/viewproblist" class="nav__link">View solved problems</a></li>
-      <li class="nav__list"><a href="/profile" class="nav__link">Profile</a></li>
-      <li class="nav__list"><a href="/showprofile" class="nav__link">Logout</a></li>
+      <li class="nav__list"><a href="/showprofile" class="nav__link">Profile</a></li>
+      <li class="nav__list"><a href="/logout" class="nav__link">Logout</a></li>
 
    </ul>
 </nav>   
@@ -25,7 +29,7 @@
     <% documents.forEach(function(documentObject) { 
       %>
       
-    <h2>Username: <%= documentObject.username %></h2>
+    <h2>Username:<a href="/profile" style="text-decoration: none"><%= documentObject.username %></a></h2>
     <p>Solved: <%= documentObject.solved_count %> </p>
  
    
@@ -40,4 +44,3 @@
   </body>
 </html>
  
-
