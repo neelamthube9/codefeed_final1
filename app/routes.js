@@ -156,23 +156,6 @@ app.get('/showprofile', isLoggedIn, function(req, res) {
         
     });
 
-app.get('/profile', isLoggedIn, function(req, res) {
-        var mongoose = require('mongoose');
-        var User = require('../app/models/user');
-
-
-        User.find({"username": req.user.username}, function(err, docs) {
-            if(!err) {
-                console.log(docs) ;
-                res.render('../views/profile1.ejs', {
-                    documents: docs 
-                });
-            }
-        });
-
-        
-    });
-
 app.get('/rankings', isLoggedIn, function(req, res) {
         var mongoose = require('mongoose');
         var User = require('../app/models/user');
