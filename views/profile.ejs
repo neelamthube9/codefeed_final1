@@ -39,11 +39,13 @@
     <h2>Username: <%= documentObject.username %></h2>
     <p>Name: <%= documentObject.name %> </p>
     <p>Date Joined: <%= documentObject.date_joined %> </p>
+    <p>Class: <%= documentObject.std %> </p>
+    <p>Branch: <%= documentObject.branch %> </p>
     <p>Email:<%= availableemail %></p>
  
    
     <% }) %>
-   <form action="/updateprofile">
+   <form action="/updateprofile1">
     <input type="submit" value="Update your Profile">
 </form>
  <form action="/showstats">
