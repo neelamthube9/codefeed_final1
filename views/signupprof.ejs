@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Welcome to Codefeed - Share and Solve</title>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/loggedinhome.css" />
+    <link rel="stylesheet" href="/add.css" />
+  </head>
+
+  <body>
+
+    <nav class="nav">
+    <ul class="nav__wrap">
+      <li class="nav__list"><a href="/loggedinhome" class="nav__link">Home</a></li>
+      <li class="nav__list"><a href="/add" class="nav__link">Add a problem</a></li>
+      <li class="nav__list"><a href="/viewproblist" class="nav__link">View solved problems</a></li>
+      <li class="nav__list"><a href="/logout" class="nav__link">Logout</a></li>
+   </ul>
+</nav>   
+
+<main class="content">
+    <div id="form-container">
+        <form action="#" autocomplete="on">
+         <textarea class="message-box" placeholder="Name" id="name"></textarea><br />
+            <textarea class="message-box" placeholder="Class" id="std"></textarea><br />
+	       <textarea class="message-box" placeholder="Branch" id="branch"></textarea><br />
+            <input class="animated bounceIn" type="submit" value="Update your information" id="update">
+        </form>
+  </div>
+</main>
+    
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>  
+    <script type="text/javascript" src="/loggedinhome.js"></script> 
+    <script>
+        $('#update').on('click', function() {
+        var name = $('#name').val();
+        var std = $('#std').val();
+	var branch = $('#branch').val();
+        var json = {
+            user_name: name,
+            user_std: std,
+	    user_branch: branch,
+        };
+        console.log(json);
+ 
+        $.post("/saveprofile1", json, function(data, error, xhr) {
+            alert("Profile Updated!");
+        });
+        
+    });
+    </script>
+  </body>
+</html>
+ 
