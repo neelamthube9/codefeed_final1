@@ -238,10 +238,30 @@ app.post('/saveproblem',function(req, res)  {
 
     var username = req.body.user_username; 
     var uname = req.body.user_name;
+    var std = req.body.user_std;
+    var branch = req.body.user_branch;
 
    User.findOne({$or:[{"facebook.email":req.user.facebook.email},{"local.email":req.user.local.email}]}, function (err, user){
   user.name = uname;
   user.username=username;
+  user.std=std;
+  user.branch=branch;
+  user.save();
+});
+
+});
+
+
+       app.post('/saveprofile1', isLoggedIn, function(req, res)  {
+ 
+    var uname = req.body.user_name;
+    var std = req.body.user_std;
+    var branch = req.body.user_branch;
+
+   User.findOne({$or:[{"facebook.email":req.user.facebook.email},{"local.email":req.user.local.email}]}, function (err, user){
+  user.name = uname;
+  user.std=std;
+  user.branch=branch;
   user.save();
 });
 
