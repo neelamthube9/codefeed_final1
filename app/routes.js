@@ -156,6 +156,7 @@ app.get('/showprofile', isLoggedIn, function(req, res) {
         
     });
 
+
 app.get('/rankings', isLoggedIn, function(req, res) {
         var mongoose = require('mongoose');
         var User = require('../app/models/user');
@@ -196,7 +197,7 @@ app.get('/checkprofile', isLoggedIn, function(req, res) {
         }
         else
         {
-            res.redirect('/feed')
+            res.redirect('/updateprofile1')
         }
             
             });
@@ -206,6 +207,9 @@ app.get('/updateprofile', function(req, res) {
                 res.render('../views/signupprofile.ejs')
     });
 
+app.get('/updateprofile1', function(req, res) {
+                res.render('../views/signupprof.ejs')
+    });
 
 app.get('/logout', function(req, res) {
         req.logout();
